@@ -5,11 +5,11 @@
 
 class User {
   // private properties
-  #username
-  #password
-  #email
-  #age
-  
+  #username;
+  #password;
+  #email;
+  #age;
+
   constructor(username, password, email, age) {
     this.#username = username;
     this.#password = password;
@@ -57,7 +57,8 @@ class User {
   //  this will be check only the anatomy of an email address.
   #validateEmail() {
     const emailRegex = /^\S+@\S+\.\S+$/;
-    if (emailRegex.test(this.#email)) console.log(`Valid Email: ${this.#email}`);
+    if (emailRegex.test(this.#email))
+      console.log(`Valid Email: ${this.#email}`);
     else console.log(`INVALID EMAIL!`);
   }
 
@@ -72,9 +73,6 @@ class User {
 }
 
 //  object
-const acer = new User("Ace_reds", "Pa$$w0rdyst", "acer@gmail.com", -1
-
-  
-);
+const acer = new User("Ace_reds", "Pa$$w0rdyst", "acer@gmail.com", -1);
 acer.validateUser();
 // console.log(acer.#username)
