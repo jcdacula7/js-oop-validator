@@ -4,17 +4,23 @@
 "use strict";
 
 class User {
+  // private properties
+  #username
+  #password
+  #email
+  #age
+  
   constructor(username, password, email, age) {
-    this.username = username;
-    this.password = password;
-    this.email = email;
-    this.age = age;
+    this.#username = username;
+    this.#password = password;
+    this.#email = email;
+    this.#age = age;
   }
 
   //  age must be between 18 to 100 years old
   #validateAge() {
-    if (this.age >= 18 && this.age <= 100)
-      console.log(`Valid Age: ${this.age}`);
+    if (this.#age >= 18 && this.#age <= 100)
+      console.log(`Valid Age: ${this.#age}`);
     else console.log(`INVALID AGE`);
   }
 
@@ -30,11 +36,11 @@ class User {
     // console.log(this.username.length)
 
     if (
-      !(this.username === "") &&
-      this.username.length === 8 &&
-      usernameRegex.test(this.username)
+      !(this.#username === "") &&
+      this.#username.length === 8 &&
+      usernameRegex.test(this.#username)
     )
-      console.log(`Valid Username: ${this.username}`);
+      console.log(`Valid Username: ${this.#username}`);
     else console.log(`INVALID USERNAME!`);
   }
 
@@ -43,15 +49,15 @@ class User {
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,10}$/;
 
-    if (passwordRegex.test(this.password))
-      console.log(`Valid Password: ${this.password}`);
+    if (passwordRegex.test(this.#password))
+      console.log(`Valid Password: ${this.#password}`);
     else console.log(`INVALID PASSWORD!`);
   }
 
   //  this will be check only the anatomy of an email address.
   #validateEmail() {
     const emailRegex = /^\S+@\S+\.\S+$/;
-    if (emailRegex.test(this.email)) console.log(`Valid Email: ${this.email}`);
+    if (emailRegex.test(this.#email)) console.log(`Valid Email: ${this.#email}`);
     else console.log(`INVALID EMAIL!`);
   }
 
@@ -66,5 +72,9 @@ class User {
 }
 
 //  object
-const acer = new User("Ace_reds", "Pa$$w0rdyst", "acer@gmail.com", -1);
+const acer = new User("Ace_reds", "Pa$$w0rdyst", "acer@gmail.com", -1
+
+  
+);
 acer.validateUser();
+// console.log(acer.#username)
